@@ -1,2 +1,15 @@
+[project]
+name = "email-spam-detection"
+version = "1.0.0"
+requires-python = ">=3.13"
+dependencies = [
+    "Flask",
+    "flask-cors",
+    "joblib",
+    "scikit-learn",
+    "numpy",
+    "scipy"
+]
+
 [tool.vercel]
-entrypoint = "api_server:app"
+entrypoint = "api/index.py"
