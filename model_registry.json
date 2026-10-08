@@ -1,0 +1,43 @@
+{
+  "project": "Email Spam Detection",
+  "registry_version": "1.0",
+
+  "models": [
+    {
+      "model_id": "spam-detector-v1",
+      "version": "v1.0",
+      "name": "Email Spam Detection Model",
+      "algorithm": "LinearSVC",
+      "framework": "scikit-learn",
+      "features": "Word + Character TF-IDF",
+
+      "training_dataset": {
+        "source": "dataset/spam.csv",
+        "original_samples": 5572,
+        "cleaned_samples": 5169,
+        "training_samples": 4135,
+        "testing_samples": 1034
+      },
+
+      "evaluation": {
+        "accuracy": 99.03,
+        "precision": 100.0,
+        "recall": 92.0,
+        "f1_score": 96.0
+      },
+
+      "confusion_matrix": [
+        [903, 0],
+        [10, 121]
+      ],
+
+      "artifacts": {
+        "model": "models/spam_model.pkl",
+        "vectorizer": "models/tfidf_vectorizer.pkl"
+      },
+
+      "status": "Production",
+      "created_at": "2026-10-07"
+    }
+  ]
+}
